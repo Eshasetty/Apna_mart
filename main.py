@@ -11,6 +11,8 @@ from urllib.parse import quote
 load_dotenv()
 CLEVERTAP_CSRF_TOKEN = os.getenv('CLEVERTAP_CSRF_TOKEN')
 CLEVERTAP_COOKIE = os.getenv('CLEVERTAP_COOKIE')
+CLEVERTAP_DETAIL_CSRF_TOKEN = os.getenv('CLEVERTAP_DETAIL_CSRF_TOKEN')
+CLEVERTAP_DETAIL_COOKIE = os.getenv('CLEVERTAP_DETAIL_COOKIE')
 
 app = FastAPI()
 
@@ -110,9 +112,9 @@ def fetch_campaign_details(campaign_ids):
             'sec-fetch-mode': 'cors',
             'sec-fetch-site': 'same-origin',
             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
-            'x-clevertap-csrf-token': '151746270',
+            'x-clevertap-csrf-token': CLEVERTAP_DETAIL_CSRF_TOKEN,  # Loaded from .env
             'x-newrelic-id': 'undefined',
-            'Cookie': "_gid=GA1.2.250768896.1752561537; WZRK_G=1fb2b8e4a05946c788625f006352063f; amp_b93379=TCXB6zPtgCmwLzJ58nk3KU...1j06ctiqa.1j06cu2b5.0.0.0; _hjSessionUser_3019028=eyJpZCI6IjBhZjI4NTg4LWEwN2EtNWU3YS1hMmQ3LWYwZTljODNmZDAwNyIsImNyZWF0ZWQiOjE3NTI1NjE1MzY5MzIsImV4aXN0aW5nIjp0cnVlfQ==; _ga=GA1.2.1422481215.1752561536; G_ENABLED_IDPS=google; wzrk_lcbid=887; agl=true; _hjSessionUser_2030532=eyJpZCI6IjhhNjA1N2NlLThkYzQtNTQyNS05YjY1LTc0NzAwNTc0ZGU4MyIsImNyZWF0ZWQiOjE3NTI1NjE2Njc5ODQsImV4aXN0aW5nIjp0cnVlfQ==; eventsListTs=; _ga_T5SN9P2G3E=GS2.1.s1752561535$o1$g1$t1752562669$j60$l0$h0; JSESSIONID=node01o9iwood6jo7c1bb1blwuly96o211530.node0; segmentListTs=1752600603270; _hjUserAttributesHash=918df2ffe7447208a544a9910ee3fb53; _hjSession_2030532=eyJpZCI6IjNhNTg1MDI2LWUwZDAtNGU5YS05NTFkLWU1Njc2YzkzNTU5MyIsImMiOjE3NTI2NDM0MTA2NDAsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=; wzrk_lc=extend; secret_csrf=615446ea-444b-4e25-850a-767e3c24c992; csrf=151746270; WSESSIONID=UEGRxFe6eyAzeNvcfkz1LRsX8m4B7oW9EP4yyvrBefRJarSBbH5SwaCCeUNYHpswf8Rv1Bf28sNSd7WRydprogi8Slsl3TTFo298wvR462jeRaYmNncbo%V03y4DX8; WZRK_S_R74-ZWR-R44Z=%7B%22s%22%3A1752642647%2C%22t%22%3A1752643419%2C%22p%22%3A2%7D; _hjHasCachedUserAttributes=true; AWSALB=S+4YlcxkoWHbTNroj1JwIzDGQGWrXUVA6RvNwnSDRdQ6zRLq22M+oOHcPSEPbzZ+2VoOTDma50M5H7iFWphDK7pmpa4IXYuMbKQXaQbjxZcjmmTEEIz2iz4EKptK; AWSALBCORS=S+4YlcxkoWHbTNroj1JwIzDGQGWrXUVA6RvNwnSDRdQ6zRLq22M+oOHcPSEPbzZ+2VoOTDma50M5H7iFWphDK7pmpa4IXYuMbKQXaQbjxZcjmmTEEIz2iz4EKptK"
+            'Cookie': CLEVERTAP_DETAIL_COOKIE  # Loaded from .env
         }
         try:
             resp = requests.get(detail_url, headers=detail_headers)

@@ -1,11 +1,12 @@
 import os
 import json
+from dotenv import load_dotenv
 from supabase import create_client, Client
 
 # --- CONFIGURATION ---
-# You can set these as environment variables or hardcode them here
-SUPABASE_URL = os.getenv('SUPABASE_URL', 'https://kdhirxaoipvhotuxfglw.supabase.co')
-SUPABASE_KEY = os.getenv('SUPABASE_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtkaGlyeGFvaXB2aG90dXhmZ2x3Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0Nzg5OTYzMSwiZXhwIjoyMDYzNDc1NjMxfQ.0Mw33CprZFJQCwDE1S4MEeb-2O96o5-HIV-8Bx8Cm-U')
+load_dotenv()
+SUPABASE_URL = os.getenv('SUPABASE_URL')
+SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 TABLE_NAME = 'apna_mart'
 DATA_PATH = os.path.join('data', 'campaign_relevant_information.json')
 
