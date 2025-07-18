@@ -1,0 +1,1133 @@
+[
+    {
+        "campaign_id": 1752606137,
+        "name": "PN | 07:30 | Milk offer - WB | 160725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "16 Jul, 07:30 AM",
+        "start_epoch": 1752631200,
+        "last_update": "16 Jul, 07:36 AM",
+        "targeted_users": 33006,
+        "targeted_devices": 33006,
+        "audience_segment_id": [
+            1752054708
+        ],
+        "audience_location_filter": [
+            "West Bengal"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 50 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250716": {
+                "1": {
+                    "sent": 30845,
+                    "impressions": 22207,
+                    "clicked": 218,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 54,
+                        "push_unreg": 9
+                    }
+                },
+                "2": {
+                    "sent": 1960,
+                    "impressions": null,
+                    "clicked": 7,
+                    "errors": {
+                        "APNSBadDeviceToken": 109,
+                        "global_frequency_caps_exceeded": 29
+                    }
+                }
+            }
+        },
+        "message_title": {
+            "1": "🔊 আজকের তাজা খবর!🥛",
+            "2": "🔊 আজকের তাজা খবর!🥛"
+        },
+        "message_text": {
+            "1": "মাত্র 19 টাকায় 500 ml দুধ!💥",
+            "2": "মাত্র 19 টাকায় 500 ml দুধ!💥"
+        },
+        "deep_link": {
+            "1": "https://shop.apnamart.in/shop/?product_id=2059",
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752606016,
+        "name": "PN | 07:15 | Milk offer - JHCG | 160725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "16 Jul, 07:15 AM",
+        "start_epoch": 1752630300,
+        "last_update": "16 Jul, 07:44 AM",
+        "targeted_users": 84034,
+        "targeted_devices": 84034,
+        "audience_segment_id": [
+            1752054708
+        ],
+        "audience_location_filter": [
+            "Chhattisgarh",
+            "Jharkhand"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 50 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250716": {
+                "1": {
+                    "sent": 75257,
+                    "impressions": 54556,
+                    "clicked": 473,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 231,
+                        "push_unreg": 27
+                    }
+                },
+                "2": {
+                    "sent": 8036,
+                    "impressions": null,
+                    "clicked": 37,
+                    "errors": {
+                        "APNSBadDeviceToken": 393,
+                        "global_frequency_caps_exceeded": 87,
+                        "APNSDeviceTokenNotForTopic": 3
+                    }
+                }
+            }
+        },
+        "message_title": {
+            "1": "500ml दूध ₹19 में!",
+            "2": "500ml दूध ₹19 में!"
+        },
+        "message_text": {
+            "1": "🌅 हेल्दी मॉर्निंग, सस्ता दूध",
+            "2": "🌅 हेल्दी मॉर्निंग, सस्ता दूध"
+        },
+        "deep_link": {
+            "1": "https://shop.apnamart.in/shop/?product_id=1971",
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752561119,
+        "name": "PN | 20:50 | CT - WB | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 08:50 PM",
+        "start_epoch": 1752592800,
+        "last_update": "15 Jul, 09:01 PM",
+        "targeted_users": 63563,
+        "targeted_devices": 63563,
+        "audience_segment_id": [
+            1750680119
+        ],
+        "audience_location_filter": [
+            "West Bengal"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 250 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 58563,
+                    "impressions": 44757,
+                    "clicked": 297,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 254,
+                        "push_unreg": 45
+                    }
+                },
+                "2": {
+                    "sent": 4288,
+                    "impressions": null,
+                    "clicked": 12,
+                    "errors": {
+                        "APNSBadDeviceToken": 359,
+                        "global_frequency_caps_exceeded": 49,
+                        "APNSDeviceTokenNotForTopic": 4,
+                        "apns_failed_delivery": 1
+                    }
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": 19,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": "আজ ₹1-এ অনেক কিছু পাওয়া যাচ্ছে!",
+            "2": "আজ ₹1-এ অনেক কিছু পাওয়া যাচ্ছে!"
+        },
+        "message_text": {
+            "1": "🕚🛍️এখনও সময় আছে একটু! স্টোর খোলা রাত 11টা পর্যন্ত! তাড়াতাড়ি অর্ডার দিন!",
+            "2": "🕚🛍️এখনও সময় আছে একটু! স্টোর খোলা রাত 11টা পর্যন্ত! তাড়াতাড়ি অর্ডার দিন!"
+        },
+        "deep_link": {
+            "1": null,
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752561278,
+        "name": "PN | 20:45 | CT - JHCG | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 08:45 PM",
+        "start_epoch": 1752592500,
+        "last_update": "15 Jul, 09:13 PM",
+        "targeted_users": 162211,
+        "targeted_devices": 162211,
+        "audience_segment_id": [
+            1750680119
+        ],
+        "audience_location_filter": [
+            "Jharkhand",
+            "Chhattisgarh"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 250 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 142854,
+                    "impressions": 105410,
+                    "clicked": 437,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 1392,
+                        "push_unreg": 88
+                    }
+                },
+                "2": {
+                    "sent": 16145,
+                    "impressions": null,
+                    "clicked": 31,
+                    "errors": {
+                        "APNSBadDeviceToken": 1506,
+                        "global_frequency_caps_exceeded": 193,
+                        "APNSDeviceTokenNotForTopic": 6,
+                        "apns_toomany_same_token": 27
+                    }
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": 2,
+                    "clicked": 23,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": 1,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": "⏳Crazy Tuesday ऑफर का टाइम खत्म",
+            "2": "⏳Crazy Tuesday ऑफर का टाइम खत्म"
+        },
+        "message_text": {
+            "1": "– हो रहा है!अभी भी समय है – स्टोर खुला है रात 11 बजे तक, जल्दी ऑर्डर करें!",
+            "2": "– हो रहा है!अभी भी समय है – स्टोर खुला है रात 11 बजे तक, जल्दी ऑर्डर करें!"
+        },
+        "deep_link": {
+            "1": null,
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752561054,
+        "name": "PN | 19:40 | CT - WB | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 07:40 PM",
+        "start_epoch": 1752588600,
+        "last_update": "15 Jul, 07:51 PM",
+        "targeted_users": 63429,
+        "targeted_devices": 63429,
+        "audience_segment_id": [
+            1750680119
+        ],
+        "audience_location_filter": [
+            "West Bengal"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 250 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 58304,
+                    "impressions": 44964,
+                    "clicked": 184,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 423,
+                        "push_unreg": 37
+                    }
+                },
+                "2": {
+                    "sent": 4245,
+                    "impressions": null,
+                    "clicked": 11,
+                    "errors": {
+                        "APNSBadDeviceToken": 354,
+                        "global_frequency_caps_exceeded": 63,
+                        "APNSDeviceTokenNotForTopic": 3
+                    }
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": 1,
+                    "clicked": 9,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": "উপোসের খাবার যদি ₹1-এ পান?🧘‍♀️🍛",
+            "2": "উপোসের খাবার যদি ₹1-এ পান?🧘‍♀️🍛"
+        },
+        "message_text": {
+            "1": "🏃‍♂️📦JK Sabudana Small Moti 250g, চিনেবাদাম, সন্ধক নুন, আমুল মস্তি দই - এখনই কিনুন পরের সোমবারের জন্য!",
+            "2": "🏃‍♂️📦JK Sabudana Small Moti 250g, চিনেবাদাম, সন্ধক নুন, আমুল মস্তি দই - এখনই কিনুন পরের সোমবারের জন্য!"
+        },
+        "deep_link": {
+            "1": null,
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752560978,
+        "name": "PN | 19:30 | CT - JHCG | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 07:30 PM",
+        "start_epoch": 1752588000,
+        "last_update": "15 Jul, 07:57 PM",
+        "targeted_users": 162400,
+        "targeted_devices": 162400,
+        "audience_segment_id": [
+            1750680119
+        ],
+        "audience_location_filter": [
+            "Jharkhand",
+            "Chhattisgarh"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 250 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 143369,
+                    "impressions": 107259,
+                    "clicked": 767,
+                    "errors": {
+                        "push_unreg": 92,
+                        "global_frequency_caps_exceeded": 1024
+                    }
+                },
+                "2": {
+                    "sent": 16265,
+                    "impressions": null,
+                    "clicked": 51,
+                    "errors": {
+                        "APNSBadDeviceToken": 1513,
+                        "APNSDeviceTokenNotForTopic": 7,
+                        "global_frequency_caps_exceeded": 129,
+                        "apns_failed_delivery": 1
+                    }
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": 2,
+                    "clicked": 20,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": "🛒 ₹1 में उपवास की पूरी थाली तैयार!",
+            "2": "🛒 ₹1 में उपवास की पूरी थाली तैयार!"
+        },
+        "message_text": {
+            "1": "साबूदाना, मूंगफली, सेंधा नमक, अमूल मस्ती दही – सब ApnaMart पर उपलब्ध!\nऑफर सिर्फ आज के लिए",
+            "2": "साबूदाना, मूंगफली, सेंधा नमक, अमूल मस्ती दही – सब ApnaMart पर उपलब्ध!\nऑफर सिर्फ आज के लिए"
+        },
+        "deep_link": {
+            "1": null,
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752585905,
+        "name": "WA | 18:50 | CT-PURCHASE-WB | 150725",
+        "status": "COMPLETED",
+        "type": "WhatsApp",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 06:55 PM",
+        "start_epoch": 1752585905,
+        "last_update": "15 Jul, 06:57 PM",
+        "targeted_users": 1002,
+        "targeted_devices": 1002,
+        "audience_segment_id": null,
+        "audience_location_filter": null,
+        "audience_activity_filter": null,
+        "device_types": null,
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "0": null
+        },
+        "message_text": {
+            "0": null
+        },
+        "deep_link": {
+            "0": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752585063,
+        "name": "WA | 18:40 | CT-PURCHASE-JHCG | 150725",
+        "status": "COMPLETED",
+        "type": "WhatsApp",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 06:41 PM",
+        "start_epoch": 1752585063,
+        "last_update": "15 Jul, 06:43 PM",
+        "targeted_users": 1290,
+        "targeted_devices": 1290,
+        "audience_segment_id": null,
+        "audience_location_filter": null,
+        "audience_activity_filter": null,
+        "device_types": null,
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "0": null
+        },
+        "message_text": {
+            "0": null
+        },
+        "deep_link": {
+            "0": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752560868,
+        "name": "PN | 18:40 | Milk offer - WB | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 06:40 PM",
+        "start_epoch": 1752585000,
+        "last_update": "15 Jul, 06:58 PM",
+        "targeted_users": 34024,
+        "targeted_devices": 34024,
+        "audience_segment_id": [
+            1752054708
+        ],
+        "audience_location_filter": [
+            "West Bengal"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 50 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 31541,
+                    "impressions": 26144,
+                    "clicked": 164,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 329,
+                        "push_unreg": 22
+                    }
+                },
+                "2": {
+                    "sent": 1975,
+                    "impressions": null,
+                    "clicked": 1,
+                    "errors": {
+                        "APNSBadDeviceToken": 105,
+                        "global_frequency_caps_exceeded": 51,
+                        "APNSDeviceTokenNotForTopic": 1
+                    }
+                }
+            }
+        },
+        "message_title": {
+            "1": "19 টাকায় নিন 500 ml দুধ!🥛",
+            "2": "19 টাকায় নিন 500 ml দুধ!🥛"
+        },
+        "message_text": {
+            "1": "🥛💪জলের দরে দুধের পুষ্টি!",
+            "2": "🥛💪জলের দরে দুধের পুষ্টি!"
+        },
+        "deep_link": {
+            "1": "https://shop.apnamart.in/shop/?product_id=2059",
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752560604,
+        "name": "PN | 18:30 | Milk offer - JHCG | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 06:30 PM",
+        "start_epoch": 1752584400,
+        "last_update": "15 Jul, 07:00 PM",
+        "targeted_users": 88002,
+        "targeted_devices": 88002,
+        "audience_segment_id": [
+            1752054708
+        ],
+        "audience_location_filter": [
+            "Chhattisgarh",
+            "Jharkhand"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 50 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 78716,
+                    "impressions": 64596,
+                    "clicked": 435,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 477,
+                        "push_unreg": 51
+                    }
+                },
+                "2": {
+                    "sent": 8316,
+                    "impressions": null,
+                    "clicked": 25,
+                    "errors": {
+                        "APNSBadDeviceToken": 389,
+                        "global_frequency_caps_exceeded": 50,
+                        "APNSDeviceTokenNotForTopic": 3
+                    }
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": 7,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": "🥛सिर्फ ₹19 में 500ml दूध!",
+            "2": "🥛सिर्फ ₹19 में 500ml दूध!"
+        },
+        "message_text": {
+            "1": "✨दूध पीजिए और पैसे भी बचाइए!",
+            "2": "✨दूध पीजिए और पैसे भी बचाइए!"
+        },
+        "deep_link": {
+            "1": "https://shop.apnamart.in/shop/?product_id=1971",
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752582118,
+        "name": "inapp_mt_post_order_wb_150725",
+        "status": "RUNNING",
+        "type": "InApp",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 05:51 PM",
+        "start_epoch": 1752582118,
+        "last_update": "15 Jul, 05:51 PM",
+        "targeted_users": 0,
+        "targeted_devices": 0,
+        "audience_segment_id": null,
+        "audience_location_filter": null,
+        "audience_activity_filter": null,
+        "device_types": null,
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": 61,
+                    "impressions": null,
+                    "clicked": 54,
+                    "errors": null
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": 23,
+                    "impressions": null,
+                    "clicked": 22,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": null,
+            "2": null
+        },
+        "message_text": {
+            "1": null,
+            "2": null
+        },
+        "deep_link": {
+            "1": null,
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752579992,
+        "name": "inapp_mt_post_order_jhcg_150725",
+        "status": "RUNNING",
+        "type": "InApp",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 05:16 PM",
+        "start_epoch": 1752579992,
+        "last_update": "15 Jul, 05:16 PM",
+        "targeted_users": 0,
+        "targeted_devices": 0,
+        "audience_segment_id": null,
+        "audience_location_filter": null,
+        "audience_activity_filter": null,
+        "device_types": null,
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": 174,
+                    "impressions": null,
+                    "clicked": 148,
+                    "errors": null
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": 116,
+                    "impressions": null,
+                    "clicked": 94,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": null,
+            "2": null
+        },
+        "message_text": {
+            "1": null,
+            "2": null
+        },
+        "deep_link": {
+            "1": null,
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752560378,
+        "name": "PN | 17:15 | CT - WB | 150725",
+        "status": "COMPLETED",
+        "type": "Push",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 05:15 PM",
+        "start_epoch": 1752579900,
+        "last_update": "15 Jul, 05:26 PM",
+        "targeted_users": 63137,
+        "targeted_devices": 63137,
+        "audience_segment_id": [
+            1750680119
+        ],
+        "audience_location_filter": [
+            "West Bengal"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 250 days"
+        },
+        "device_types": [
+            1,
+            2,
+            3
+        ],
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": 57914,
+                    "impressions": 44161,
+                    "clicked": 365,
+                    "errors": {
+                        "global_frequency_caps_exceeded": 569,
+                        "push_unreg": 15
+                    }
+                },
+                "2": {
+                    "sent": 4191,
+                    "impressions": null,
+                    "clicked": 13,
+                    "errors": {
+                        "APNSBadDeviceToken": 353,
+                        "global_frequency_caps_exceeded": 93,
+                        "APNSDeviceTokenNotForTopic": 2
+                    }
+                }
+            },
+            "20250716": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": 9,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "1": "😊✅1 কেজি আলু আজ 1 টাকা!",
+            "2": "😊✅1 কেজি আলু আজ 1 টাকা!"
+        },
+        "message_text": {
+            "1": "ভাবলেন ভুল পড়লেন? না, একদম সত্যি! এখনই কিনুন!😲",
+            "2": "ভাবলেন ভুল পড়লেন? না, একদম সত্যি! এখনই কিনুন!😲"
+        },
+        "deep_link": {
+            "1": "https://shop.apnamart.in/shop/?product_id=68780",
+            "2": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Online",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "1440"
+    },
+    {
+        "campaign_id": 1752579587,
+        "name": "SMS | 17:10 | CT--WB | 150725",
+        "status": "COMPLETED",
+        "type": "Sms",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 05:09 PM",
+        "start_epoch": 1752579587,
+        "last_update": "15 Jul, 05:25 PM",
+        "targeted_users": 87895,
+        "targeted_devices": 87895,
+        "audience_segment_id": null,
+        "audience_location_filter": [
+            "Online"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 60 days"
+        },
+        "device_types": null,
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "0": null
+        },
+        "message_text": {
+            "0": null
+        },
+        "deep_link": {
+            "0": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Offline",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "2880"
+    },
+    {
+        "campaign_id": 1752579411,
+        "name": "SMS | 17:05 | CT--JH | 150725",
+        "status": "COMPLETED",
+        "type": "Sms",
+        "created_by": "satyajeet.kumar@apnamart.in",
+        "start_time": "15 Jul, 05:06 PM",
+        "start_epoch": 1752579411,
+        "last_update": "15 Jul, 05:38 PM",
+        "targeted_users": 183706,
+        "targeted_devices": 183706,
+        "audience_segment_id": null,
+        "audience_location_filter": [
+            "Online"
+        ],
+        "audience_activity_filter": {
+            "oTxt": "",
+            "vTxt": "In the last 60 days"
+        },
+        "device_types": null,
+        "push_integration_details": {
+            "FIREBASE": true,
+            "XIAOMI": false,
+            "BAIDU": false,
+            "HUAWEI": false,
+            "APPLE": true
+        },
+        "stats": {
+            "20250715": {
+                "1": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                },
+                "2": {
+                    "sent": null,
+                    "impressions": null,
+                    "clicked": null,
+                    "errors": null
+                }
+            }
+        },
+        "message_title": {
+            "0": null
+        },
+        "message_text": {
+            "0": null
+        },
+        "deep_link": {
+            "0": null
+        },
+        "conv_goal_event_id": 47,
+        "conv_goal_event_property": "Offline",
+        "conv_goal_report_period": 6,
+        "conv_goal_time_window": "2880"
+    }
+]

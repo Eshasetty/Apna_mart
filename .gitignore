@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+venv311/
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Data outputs
+*.sqlite3
+data/campaign_analysis.pdf
+
+# VSCode
+.vscode/
+
+# Test outputs
+*.pytest_cache/
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/ 
