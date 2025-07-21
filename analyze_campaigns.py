@@ -11,6 +11,9 @@ import openai
 from fastapi import FastAPI, Body
 from typing import List, Dict, Any
 from fpdf import FPDF
+# Add ChromaDB imports
+import chromadb
+from chromadb.config import Settings
 
 # Load environment variables from .env
 load_dotenv()
@@ -18,137 +21,164 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 print("OPENAI_API_KEY loaded:", OPENAI_API_KEY)  # For debugging
 openai.api_key = OPENAI_API_KEY
 
-DATA_PATH = os.path.join('data', 'campaign_relevant_information.json')
-OUTPUT_PATH = os.path.join('data', 'campaign_analysis.txt')
-
 app = FastAPI()
 
-# Helper to build a prompt for a single campaign
-def build_campaign_prompt(campaign):
+# Helper to build a single comprehensive AI Marketing Effectiveness Report prompt
+# (No emojis or special Unicode characters)
+def build_effectiveness_report_prompt(campaigns, customer_name="[Customer Name]", period="[Q2 2025]"):
     return f"""
-Campaign Name: {campaign.get('name')}
-Status: {campaign.get('status')}
-Type: {campaign.get('type')}
-Created By: {campaign.get('created_by')}
-Start Time: {campaign.get('start_time')}
-Targeted Users: {campaign.get('targeted_users')}
-Targeted Devices: {campaign.get('targeted_devices')}
-Audience Segment IDs: {campaign.get('audience_segment_id')}
-Audience Location Filter: {campaign.get('audience_location_filter')}
-Audience Activity Filter: {campaign.get('audience_activity_filter')}
-Device Types: {campaign.get('device_types')}
-Push Integration Details: {campaign.get('push_integration_details')}
-Message Title: {campaign.get('message_title')}
-Message Text: {campaign.get('message_text')}
-Deep Link: {campaign.get('deep_link')}
-Conversion Goal Event ID: {campaign.get('conv_goal_event_id')}
-Conversion Goal Event Property: {campaign.get('conv_goal_event_property')}
-Conversion Goal Report Period: {campaign.get('conv_goal_report_period')}
-Conversion Goal Time Window: {campaign.get('conv_goal_time_window')}
+AI Marketing Effectiveness Report
+Powered by [Your AI Platform] | For: {customer_name} | Period: {period}
 
-Given this information, analyze the pros and cons of this campaign. Pay special attention to the size of the target audience and the specificity of the audience filters. The more targeted a campaign is to a niche audience, the more likely people are to engage. Be specific in your analysis.
-"""
+You are an expert AI marketing analyst. Given the following campaign data, generate a single executive summary and effectiveness report in the following style:
 
-# Helper to build a prompt for all campaigns
-def build_overall_prompt(campaigns):
-    return f"""
-You are an expert marketing analyst. You are given a list of campaigns, each with information about their target audience size, filters, and other details. Analyze the overall pros and cons of the set of campaigns, considering:
-- How well each campaign targets its audience (niche vs broad)
-- The likely engagement based on audience size and filters
-- Any patterns or recommendations for future campaigns
+Executive Summary
+This quarter, your team ran:
 
-Here is the data:
+- XX Dynamic Segments
+- YY Personalized Journeys
+- ZZ A/B or Multivariate Tests
+- Average campaign launch time reduced from [X] days to [Y] hours
+Your Growth Maturity Score: 78/100 (up 12 from last quarter)
+You are now in the “Advanced” cohort compared to other D2C brands using the platform.
+
+Top Wins:
+- Hyper-personalized restock reminders increased repeat rate by 28%.
+- RFM-based upsell journeys drove Rs X in incremental revenue.
+- 3 micro-segments added >12% LTV uplift.
+
+Growth Maturity Scorecard
+This is the “hero” section of your report.
+
+Capability Area	Metric	Customer Score	Benchmark	Comments
+Segmentation Depth	Avg. attributes per segment	11	8	Rich behavioral + RFM
+Personalization Level	% campaigns with dynamic content	63%	45%	Personalized offers & copy
+Experimentation Velocity	Avg. tests launched / month	5.4	2.8	High test velocity
+Time to Launch	Idea to Campaign live (avg. hrs)	9h	3 days	Agent-led auto deployment
+Automation Coverage	% journeys triggered automatically	71%	60%	Excellent automation setup
+Data Dependence Score	Campaigns launched without DS/Eng	94%	70%	Self-serve fully enabled
+
+Composite Score: 78 / 100
+You’ve unlocked full AI-led agility across your marketing team.
+
+Campaign Velocity & Automation Coverage
+Week	Campaigns Launched	% Automated	Avg Time to Launch	Comments
+Week 1	12	75%	11h	Surge post product drop
+Week 2	14	80%	8h	A/B on CTA copy
+Week 3	10	68%	10h	Retargeting micro-campaign
+Week 4	16	72%	9h	Flash sale with price anchor test
+
+A/B & Multivariate Testing Performance
+Test Name	Objective	Variant Winner	Uplift	Duration
+CTA Placement	Increase Clicks	Variant B	+14.2%	5 days
+Product Sequence	Upsell Flow Conversion	Variant A	+9.1%	4 days
+Subject Line Length	Email Open Rate	Variant C	+6.7%	3 days
+
+Avg. Test-to-Learn Time: 4.3 days
+
+Next: Recommend testing personalized pricing bands for high-LTV segments.
+
+Segmentation Intelligence Report
+Highlight:
+- Segments created automatically by agent
+- Conversion rate vs global avg
+- Revenue contribution
+
+Segment Name	Auto-Created?	Size	Conv. Rate	Revenue Uplift
+Lapsed Buyers (90-120d)	Yes	28,000	8.2%	Rs 6.4L
+High AOV, Low Frequency	Yes	12,000	12.4%	Rs 4.8L
+New Tier-1 City Shoppers	No (manual)	9,400	7.1%	Rs 2.2L
+
+Recommendations from AI Agents
+Recommendation Theme	What the Agent Suggested	Status
+Churn Reduction	Trigger pre-exit push for “silent” app users	Implemented
+High AOV Upsell	Add bundling to post-purchase journeys	Testing
+CLTV Boosting	Personalize pricing on 2nd visit	In progress
+
+Summary & What’s Next
+You’ve unlocked:
+- Faster GTM with fewer handoffs
+- Better personalization at scale
+- Higher ROI on lifecycle automation
+
+Next Moves:
+- Adopt agent for channel mix optimization
+- Enable real-time product feed syncing
+- Test multi-agent coordination for growth loops (referral + upsell)
+
+Optional Add-ons
+- Benchmark your maturity score vs peer D2C brands
+- Export data into CSV/BI dashboard
+- Auto-schedule report monthly/quarterly
+
+Here is the campaign data:
 {json.dumps(campaigns, indent=2)}
 
-Provide a detailed analysis, highlighting which campaigns are likely to perform best and why, and any improvements that could be made.
+Generate the report in the above style, filling in the numbers and insights based on the data provided. If a metric cannot be calculated, make a reasonable estimate or note it as unavailable.
 """
 
-# Function to call OpenAI for a single campaign
-def analyze_campaign(campaign):
-    prompt = build_campaign_prompt(campaign)
+# Function to call OpenAI for the overall effectiveness report
+def analyze_effectiveness_report(campaigns, customer_name="[Customer Name]", period="[Q2 2025]"):
+    prompt = build_effectiveness_report_prompt(campaigns, customer_name, period)
     response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=500
+        max_tokens=2000
     )
     content = response.choices[0].message.content
     if content is not None:
         return content.strip()
     else:
-        print("Warning: OpenAI response content is None for campaign", campaign.get('campaign_id'))
+        print("Warning: OpenAI response content is None for effectiveness report")
         return ""
 
-# Function to call OpenAI for overall analysis
-def analyze_overall(campaigns):
-    prompt = build_overall_prompt(campaigns)
-    response = openai.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=1000
+# Add this function to clean text for PDF
+def clean_text_for_pdf(text):
+    return (
+        text.replace('“', '"')
+            .replace('”', '"')
+            .replace('‘', "'")
+            .replace('’', "'")
+            .replace('–', '-')
+            .replace('—', '-')
+            .replace('…', '...')
     )
-    content = response.choices[0].message.content
-    if content is not None:
-        return content.strip()
-    else:
-        print("Warning: OpenAI response content is None for overall analysis")
-        return ""
-
-def save_analysis_pdf(analyses, overall_analysis, pdf_path):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-
-    pdf.cell(0, 10, "Campaign Analyses", ln=True, align="C")
-    pdf.ln(10)
-
-    for analysis in analyses:
-        pdf.set_font("Arial", "B", 12)
-        pdf.cell(0, 10, f"Campaign: {analysis['name']} (ID: {analysis['campaign_id']})", ln=True)
-        pdf.set_font("Arial", size=12)
-        pdf.multi_cell(0, 10, analysis['analysis'])
-        pdf.ln(5)
-
-    pdf.set_font("Arial", "B", 12)
-    pdf.cell(0, 10, "Overall Analysis", ln=True)
-    pdf.set_font("Arial", size=12)
-    pdf.multi_cell(0, 10, overall_analysis)
-
-    pdf.output(pdf_path)
 
 @app.post("/analyze_campaigns")
-def analyze_campaigns_api(campaigns: List[Dict[str, Any]] = Body(default=None)):
+def analyze_campaigns_api(campaigns: List[Dict[str, Any]] = Body(default=None), customer_name: str = "[Customer Name]", period: str = "[Q2 2025]"):
     """
-    Analyze campaigns using OpenAI. If no campaigns are provided, load from file.
+    Generate a single AI Marketing Effectiveness Report for all campaigns together using OpenAI. If no campaigns are provided, load from ChromaDB.
     """
     print("Endpoint /analyze_campaigns called")
     if campaigns is None:
-        print(f"No campaigns provided in request. Loading from {DATA_PATH}")
-        with open(DATA_PATH, 'r', encoding='utf-8') as f:
-            campaigns = json.load(f)
+        print("No campaigns provided in request. Loading from ChromaDB.")
+        client = chromadb.Client(Settings(
+            persist_directory=os.path.join('data', 'chromadb_data')
+        ))
+        collection = client.get_or_create_collection("campaigns")
+        results = collection.query(query_texts=[""], n_results=1000)
+        campaigns = []
+        for i in range(len(results['ids'][0])):
+            metadata = results['metadatas'][0][i]
+            full_campaign = json.loads(metadata['full_campaign_json'])
+            campaigns.append(full_campaign)
+        print(f"Loaded {len(campaigns)} campaigns from ChromaDB.")
     else:
         print(f"Received {len(campaigns)} campaigns in request.")
 
-    # Analyze each campaign
-    analyses = []
-    for idx, campaign in enumerate(campaigns):
-        print(f"Analyzing campaign {idx+1}/{len(campaigns)}: {campaign.get('name')}")
-        analysis = analyze_campaign(campaign)
-        analyses.append({
-            'campaign_id': campaign.get('campaign_id'),
-            'name': campaign.get('name'),
-            'analysis': analysis
-        })
+    print("Generating overall effectiveness report for all campaigns...")
+    effectiveness_report = analyze_effectiveness_report(campaigns, customer_name, period)
+    print("Effectiveness report generation complete.")
 
-    print("Starting overall analysis of all campaigns...")
-    overall_analysis = analyze_overall(campaigns)
-    print("Overall analysis complete.")
-
-    # Save analysis as PDF
+    # Save report as PDF
     pdf_path = os.path.join('data', 'campaign_analysis.pdf')
-    save_analysis_pdf(analyses, overall_analysis, pdf_path)
-    print(f"Analysis PDF saved to {pdf_path}")
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    pdf.multi_cell(0, 10, clean_text_for_pdf(effectiveness_report))
+    pdf.output(pdf_path)
+    print(f"Effectiveness report PDF saved to {pdf_path}")
 
     return {
-        "analyses": analyses,
-        "overall_analysis": overall_analysis
+        "effectiveness_report": effectiveness_report
     } 

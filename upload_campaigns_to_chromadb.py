@@ -1,19 +1,21 @@
 import json
 import chromadb
-from chromadb.config import Settings
 import os
 
-# Path to campaign_details.json
-DATA_PATH = os.path.join('data', 'campaign_details.json')
+# Use the absolute path for campaign_details.json
+DATA_PATH = '/Users/eshasetty/Documents/Niti AI/Apna_market/data/campaign_details.json'
 
 # Load campaign details
 with open(DATA_PATH, 'r', encoding='utf-8') as f:
     campaigns = json.load(f)
 
-# Initialize ChromaDB client (local persistent storage)
-client = chromadb.Client(Settings(
-    persist_directory="chromadb_data"  # Change this if you want a different directory
-))
+# Set the ChromaDB directory to the absolute path
+CHROMA_DIR = '/Users/eshasetty/Documents/Niti AI/Apna_market/data/chromadb_apna_mart'
+os.makedirs(CHROMA_DIR, exist_ok=True)
+print(f"Saving ChromaDB data to: {CHROMA_DIR}")
+
+# Initialize ChromaDB persistent client (new API)
+client = chromadb.PersistentClient(path=CHROMA_DIR)
 
 # Create or get the 'campaigns' collection
 collection = client.get_or_create_collection("campaigns")
@@ -40,4 +42,4 @@ for campaign in campaigns:
         ids=[campaign_id]
     )
 
-print("All campaigns uploaded to ChromaDB!") 
+print("All campaigns uploaded to ChromaDB!")
