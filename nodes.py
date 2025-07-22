@@ -225,8 +225,7 @@ def upload_to_chromadb_node(context):
 def upload_to_supabase_node(context):
     try:
         table_name = 'apna_mart'
-        # upload_to_supabase(context['campaigns'], table_name)  # Commented out to skip writing to Supabase
-        print('[INFO] Skipping upload to Supabase.')
+        upload_to_supabase(context['campaigns'], table_name)
     except Exception as e:
         print(f"[ERROR] upload_to_supabase_node failed: {e}")
     return context
@@ -279,4 +278,29 @@ def load_campaigns_from_chromadb_node(context):
         campaigns.append(full_campaign)
     context['campaigns'] = campaigns
     print(f'[INFO] Loaded {len(campaigns)} campaigns from ChromaDB.')
+    return context 
+
+def fetch_and_upload_clevertap_node(context):
+    """
+    Fetch campaign data directly from CleverTap and upload to Supabase.
+    """
+    try:
+        # Step 1: Fetch all campaign info from CleverTap
+        all_info = get_clevertap_report_data_new_curl({})
+        if not all_info:
+            print("[ERROR] No data retrieved from CleverTap.")
+            return context
+        campaign_ids = extract_campaign_ids(all_info)
+        details_list = fetch_campaign_details(campaign_ids)
+        relevant_list = extract_relevant_campaign_info(details_list)
+        context['campaigns'] = relevant_list
+
+        # Step 2: Upload to Supabase
+        from helper import upload_to_supabase
+        table_name = 'apna_mart'
+        upload_to_supabase(relevant_list, table_name)
+        print(f"[INFO] Uploaded {len(relevant_list)} campaigns from CleverTap to Supabase.")
+
+    except Exception as e:
+        print(f"[ERROR] fetch_and_upload_clevertap_node failed: {e}")
     return context 

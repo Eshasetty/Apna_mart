@@ -33,37 +33,49 @@ def upload_to_supabase(campaigns, table_name, supabase_url=None, supabase_key=No
     try:
         from supabase import create_client, Client
         load_dotenv()
-        supabase_url = supabase_url or os.getenv('SUPABASE_URL')
-        supabase_key = supabase_key or os.getenv('SUPABASE_KEY')
+        supabase_url = os.getenv('SUPABASE_URL')
+        supabase_key = os.getenv('SUPABASE_KEY')
         if not supabase_url or not supabase_key:
-            print("[ERROR] SUPABASE_URL or SUPABASE_KEY is missing from .env or arguments.")
+            print("[ERROR] SUPABASE_URL or SUPABASE_KEY is missing from .env.")
             return
         supabase: Client = create_client(supabase_url, supabase_key)
         for campaign in campaigns:
             row = {
                 'campaign_id': campaign.get('campaign_id'),
-                'name': campaign.get('name'),
+                'campaign_name': campaign.get('name'),
                 'status': campaign.get('status'),
                 'type': campaign.get('type'),
-                'created_by': campaign.get('created_by'),
                 'start_time': campaign.get('start_time'),
                 'start_epoch': campaign.get('start_epoch'),
-                'last_update': campaign.get('last_update'),
-                'targeted_users': campaign.get('targeted_users'),
-                'targeted_devices': campaign.get('targeted_devices'),
-                'audience_segment_id': campaign.get('audience_segment_id'),
-                'audience_location_filter': campaign.get('audience_location_filter'),
-                'audience_activity_filter': campaign.get('audience_activity_filter'),
-                'device_types': campaign.get('device_types'),
-                'push_integration_details': campaign.get('push_integration_details'),
-                'stats': campaign.get('stats'),
-                'message_title': campaign.get('message_title'),
-                'message_text': campaign.get('message_text'),
-                'deep_link': campaign.get('deep_link'),
-                'conv_goal_event_id': campaign.get('conv_goal_event_id'),
-                'conv_goal_event_property': campaign.get('conv_goal_event_property'),
-                'conv_goal_report_period': campaign.get('conv_goal_report_period'),
-                'conv_goal_time_window': campaign.get('conv_goal_time_window'),
+                'created_by': campaign.get('created_by'),
+                'last_updated': campaign.get('last_update'),
+                'sent_android': campaign.get('stats', {}).get('sent_android'),
+                'impressions_android': campaign.get('stats', {}).get('impressions_android'),
+                'clicks_android': campaign.get('stats', {}).get('clicks_android'),
+                'sent_ios': campaign.get('stats', {}).get('sent_ios'),
+                'impressions_ios': campaign.get('stats', {}).get('impressions_ios'),
+                'clicks_ios': campaign.get('stats', {}).get('clicks_ios'),
+                'total_sent': campaign.get('stats', {}).get('total_sent'),
+                'total_impressions': campaign.get('stats', {}).get('total_impressions'),
+                'total_clicks': campaign.get('stats', {}).get('total_clicks'),
+                'ctr': campaign.get('stats', {}).get('ctr'),
+                'title': campaign.get('message_title', {}).get('1') or campaign.get('message_title', {}).get('2'),
+                'message': campaign.get('message_text', {}).get('1') or campaign.get('message_text', {}).get('2'),
+                'cta_url': campaign.get('deep_link', {}).get('1') or campaign.get('deep_link', {}).get('2'),
+                'image_url': campaign.get('image_url'),
+                'segment_name': campaign.get('segment_name'),
+                'region': campaign.get('audience_location_filter'),
+                'segment_id': campaign.get('audience_segment_id'),
+                'device_android': '1' in (campaign.get('device_types') or []),
+                'device_ios': '2' in (campaign.get('device_types') or []),
+                'device_web': '3' in (campaign.get('device_types') or []),
+                'throttling_enabled': campaign.get('throttling_enabled'),
+                'throttle_limit': campaign.get('throttle_limit'),
+                'tr_cap': campaign.get('tr_cap'),
+                'push_amplified': campaign.get('push_amplified'),
+                'errors_android': json.dumps(campaign.get('stats', {}).get('errors_android')) if campaign.get('stats', {}).get('errors_android') is not None else None,
+                'errors_ios': json.dumps(campaign.get('stats', {}).get('errors_ios')) if campaign.get('stats', {}).get('errors_ios') is not None else None,
+                'raw_json': json.dumps(campaign),
             }
             try:
                 response = supabase.table(table_name).upsert(row, on_conflict='campaign_id').execute()
