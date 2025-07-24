@@ -1,10 +1,12 @@
-from nodes import load_campaigns_from_chromadb_node, upload_to_supabase_node, analyze_campaigns_node, fetch_and_upload_clevertap_node
+from nodes import load_campaigns_from_chromadb_node, upload_to_supabase_node, analyze_campaigns_node, fetch_and_upload_clevertap_node, fetch_and_save_all_journey_details_node
 import json
 
 def main():
     context = {}
+    # Step 0: Fetch and save all journey details from CleverTap
+    context = fetch_and_save_all_journey_details_node(context)
     # Step 0: Fetch from CleverTap and upload to Supabase
-    # context = fetch_and_upload_clevertap_node(context)
+    context = fetch_and_upload_clevertap_node(context)
     # Step 1: Load campaigns from ChromaDB
     # context = load_campaigns_from_chromadb_node(context)
     # Step 2: Upload to Supabase (optional, but kept for compatibility)
